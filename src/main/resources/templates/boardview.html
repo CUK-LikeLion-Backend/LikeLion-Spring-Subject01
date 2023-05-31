@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Board View</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .layout {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 16px;
+            background-color: #0066cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #0052b3;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <h1>Board View</h1>
+    <h3>Title: <span th:text="${board.title}"></span></h3>
+    <p>Content: <span th:text="${board.content}"></span></p>
+    <a href="/board/modify/{boardId}" th:href="@{/board/modify/{boardId}(boardId=${board.id})}">Modify</a>
+    <a href="/board/delete" th:href="@{/board/delete(id=${board.id})}">Delete</a>
+</div>
+</body>
+</html>
