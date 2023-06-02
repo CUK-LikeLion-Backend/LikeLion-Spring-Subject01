@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>멋사 백엔드 스프링 과제</title>
+</head>
+
+<style>
+
+  .layout {
+    width : 500px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+
+</style>
+
+<body>
+
+<h3>
+    <a href="/">Home</a>
+</h3>
+
+<h1 th:each="content : ${list}">
+    <a th:text="${content.name}" th:href="@{${content.url}}"></a>
+</h1>
+
+</body>
+</html>
