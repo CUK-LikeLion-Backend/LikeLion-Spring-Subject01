@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성폼미쳐따이</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .layout {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .layout input,
+        .layout textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 16px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .layout input:focus,
+        .layout textarea:focus {
+            border-color: #6c63ff;
+        }
+
+        .layout textarea {
+            min-height: 200px;
+        }
+
+        .layout button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .layout button:hover {
+            background-color: #524cff;
+        }
+    </style>
+</head>
+<body>
+<h1>게시물 작성폼미쳐따이</h1>
+<div class="layout">
+    <form action="/board/writepro" method="post">
+        <input name="title" type="text" placeholder="제목">
+        <textarea name="content" placeholder="내용"></textarea>
+        <button type="submit">작성</button>
+    </form>
+</div>
+</body>
+</html>
