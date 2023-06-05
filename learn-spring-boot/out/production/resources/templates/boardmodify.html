@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>게시물 수정폼미쳐따이</title>
+  <style>
+    .layout {
+      width: 500px;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+
+    .layout input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .layout textarea {
+      min-height: 300px;
+    }
+
+    .layout button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .layout button:hover {
+      background-color: #524cff;
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <form action="@{/board/update/{id}(id=${board.id})}" method="post">
+    <input name="title" type="text" th:value="${board.title}" required>
+    <textarea name="content" required th:text="${board.content}"></textarea>
+    <button type="submit">수정</button>
+  </form>
+</div>
+</body>
+</html>
