@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -24,7 +25,7 @@ public class BoardController {
 
         boardService.write(board);
 
-        return "";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/board/list")
@@ -57,14 +58,15 @@ public class BoardController {
         return "boardmodify";
     }
 
-    @PostMapping("/board/update/{id}")
-    public String boardUpdate(@PathVariable("id") Integer id,
+    @PostMapping("/board/update")
+    public String boardUpdate(@RequestParam("id") Integer id,
                               Board board){
-
+        System.out.println("[DEBUG] board modify");
         Board boardTemp = boardService.boardView(id);
         boardTemp.setTitle(board.getTitle());
         boardTemp.setContent(board.getContent());
+        boardService.write(boardTemp);
 
-        return "boardmodify";
+        return "redirect:/board/list";
     }
 }

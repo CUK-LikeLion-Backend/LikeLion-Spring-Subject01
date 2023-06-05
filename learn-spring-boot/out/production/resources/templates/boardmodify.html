@@ -43,7 +43,7 @@
 </head>
 <body>
 <div class="layout">
-  <form action="@{/board/update/{id}(id=${board.id})}" method="post">
+  <form th:action="@{/board/update(id=${board.id})}" method="post">
     <input name="title" type="text" th:value="${board.title}" required>
     <textarea name="content" required th:text="${board.content}"></textarea>
     <button type="submit">수정</button>
