@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+    <style>
+        .layout {
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        input#userId {
+            width: 30%;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <h1>게시글 수정</h1>
+    <form action="/board/update/{id}" method="post" th:action="@{/board/update/{id}(id=${board.boardId})}">
+        <div class="form-group">
+            <label for="title">제목</label>
+            <input type="text" id="title" name="title" th:value="${board.title}" required>
+        </div>
+        <div class="form-group">
+            <label for="content">본문</label>
+            <textarea id="content" name="content" rows="6" required th:text="${board.content}"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="userId">작성자</label>
+            <input type="text" id="userId" name="userId" th:value="${board.userId}" required>
+        </div>
+        <button type="submit">작성</button>
+    </form>
+</div>
+</body>
+</html>
