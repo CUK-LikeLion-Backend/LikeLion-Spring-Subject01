@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 상세 페이지</title>
+</head>
+<style>
+  .layout {
+    width : 500px;
+    margin : 0 auto;
+    margin-top : 40px;
+  }
+
+</style>
+<body>
+<div class="layout">
+  <h2>게시글 상세</h2>
+  <div>
+    <label for="id">글번호:</label>
+    <span id="id" th:text="${board.id}"></span>
+  </div>
+  <div>
+    <label for="title">제목:</label>
+    <span id="title" th:text="${board.title}"></span>
+  </div>
+  <div>
+    <label for="content">내용:</label>
+    <pre id="content" th:text="${board.content}"></pre>
+  </div>
+</div>
+</body>
+</html>
